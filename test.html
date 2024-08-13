@@ -1,0 +1,20 @@
+<!-- app/templates/index.html -->
+{% extends "base.html" %}
+{% block content %}
+    <h1>Find NYC Health Facilities</h1>
+    <form method="POST" action="{{ url_for('routes.index') }}">
+        {{ form.hidden_tag() }}
+        {{ form.address.label }}<br>
+        {{ form.address(size=32) }}<br>
+        {{ form.submit() }}
+    </form>
+
+    {% if facilities %}
+        <h2>Nearby Health Facilities</h2>
+        <ul>
+        {% for facility in facilities %}
+            <li>{{ facility.facility_name }} - {{ facility.address1 }}, {{ facility.city }}, {{facility.state}} {{facility.fac_zip}}, {{facility.fac_phone}}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}
