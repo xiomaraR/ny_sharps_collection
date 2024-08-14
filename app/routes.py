@@ -1,4 +1,3 @@
-# app/routes.py
 from flask import Blueprint, render_template, flash
 from app.forms import AddressForm
 import requests

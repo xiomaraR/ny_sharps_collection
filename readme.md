@@ -1,6 +1,8 @@
 # NYS Safe Sharps Collection Locator
 
-This Flask application provides a web interface for locating nearby safe sharps collection sites in New York State.
+This Flask application provides a web interface for locating nearby safe sharps collection sites in New York State using NYS's Department of Health Data API.
+
+[All hospitals and nursing homes in New York State are mandated by law](https://www.nysenate.gov/legislation/laws/PBH/1389-DD) to accept home-generated sharps as a free, community service through their sharps collection programs.
 
 ## Features
 
@@ -45,12 +47,14 @@ This Flask application provides a web interface for locating nearby safe sharps 
 4. **Run the app:**
    ```bash
         flask run
+        # or
+        python3 app.py
    ```
 
 ## Future Improvements
 
 - Adding search filters
-- More data cleanup
+- Deeper data cleaning
 - Locations of non health facility venues that offer syringe collection drop boxes (or "kiosks")
 - Adding click to directions and click to call
 - Allow users to create accounts and save preferred collection sites
