@@ -1,6 +1,6 @@
 # NYS Safe Sharps Collection Locator
 
-This Flask application provides a web interface for locating nearby safe sharps collection sites in New York State using NYS's Department of Health Data API.
+This Flask application offers a simple interface to help find nearby safe sharps collection sites in New York State, using data from the NYS Department of Health API.
 
 [All hospitals and nursing homes in New York State are mandated by law](https://www.nysenate.gov/legislation/laws/PBH/1389-DD) to accept home-generated sharps as a free, community service through their sharps collection programs.
 
@@ -8,7 +8,7 @@ This Flask application provides a web interface for locating nearby safe sharps 
 
 - **Search by Location:** Users can enter and address, zip code or name of a location to find the nearest safe sharps collection sites.
 - **Map Visualization:** The application displays a map with markers representing the locations of the collection sites.
-- **Site Information:** Clicking on a marker reveals a popup with details about the collection site, such as address, phone number, and operating hours.
+- **Site Information:** Clicking on a marker reveals a popup with details about the collection site, such as address and phone number.
 
 ## Installation and Setup
 
@@ -35,8 +35,11 @@ This Flask application provides a web interface for locating nearby safe sharps 
 
 2. **Create a .env file:**
    in the root of your project and add the following environment variables:
-   LOCATIONIQ_API_KEY='replace_with_api_key'
-   HEALTH_API_TOKEN='replace_with_access_token'
+
+   ```bash
+     LOCATIONIQ_API_KEY='replace_with_api_key'
+     HEALTH_API_TOKEN='replace_with_access_token'
+   ```
 
 3. **Install Dependencies:**
 
