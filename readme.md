@@ -13,6 +13,7 @@ This Flask application offers a simple interface to help find nearby safe sharps
 ## Installation and Setup
 
 1. **Create a virtual environment:**
+
    macOS and Linux:
 
    ```bash
@@ -29,7 +30,7 @@ This Flask application offers a simple interface to help find nearby safe sharps
    # Create a virtual environment
    python3 -m venv venv
    # Activate the virtual environment
-   venv\\Scripts\\activate
+   venv\Scripts\activate
 
    ```
 
