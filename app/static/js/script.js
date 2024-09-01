@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const alertDiv = document.getElementById("alert-div");
   const searchForm = document.getElementById("search-form");
   const alertClose = alertDiv.querySelector(".alertClose");
-  let searchPerformed = false; // Flag to track if a search has been performed
+  let searchPerformed = false;
 
   console.log("searchForm:", searchForm);
   console.log("searchForm type:", typeof searchForm);
@@ -144,9 +144,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Reset input form
   addressInput.value = addressInput.defaultValue;
-
-  // If the form is submitted (e.g., by pressing Enter), set the searchPerformed flag
-  // document.querySelector("form").addEventListener("submit", function () {
-  //   searchPerformed = true;
-  // });
 });

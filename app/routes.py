@@ -17,9 +17,7 @@ def index():
         if location:
             facilities = get_health_facilities(location["lat"], location["lon"])
             if not facilities:
-                flash(
-                    "No facilities found for the given address or zip. Please try another."
-                )
+                flash("No facilities found for the given address or zip. Please try another.")
         else:
             flash("Invalid address or zipcode. Please try again.")
     return render_template(
@@ -32,7 +30,7 @@ def get_location(address):
     url = f"https://us1.locationiq.com/v1/search.php?key={locationiq_api_key}&q={address}&format=json"
     try:
         response = requests.get(url)
-        response.raise_for_status()  # Raise HTTPError for bad responses (4xx and 5xx)
+        response.raise_for_status()
         data = response.json()[0]
         return {"lat": data["lat"], "lon": data["lon"]}
     except requests.exceptions.RequestException as e:
@@ -52,7 +50,7 @@ def get_health_facilities(lat, lon):
     headers = {"X-App-Token": health_api_token}
     try:
         response = requests.get(url, params=params, headers=headers)
-        response.raise_for_status()  # Raise HTTPError for bad responses (4xx and 5xx)
+        response.raise_for_status()
         facilities = response.json()
 
         # Exclude school-based facilities
@@ -61,10 +59,7 @@ def get_health_facilities(lat, lon):
             for facility in facilities
             if not (
                 (facility.get("fasc_desc_short") == "HOSP-SB")
-                or (
-                    facility.get("description")
-                    == "School Based Hospital Extension Clinic"
-                )
+                or (facility.get("description") == "School Based Hospital Extension Clinic")
                 or (
                     facility.get("description")
                     == "School Based Hospital and Treatment Center Extension Clinic"

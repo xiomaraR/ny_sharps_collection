@@ -5,7 +5,7 @@ import os
 
 def create_app(config_class=None):
     app = Flask(__name__, static_folder="static", static_url_path="/static")
-    load_dotenv()  # Load environment variables from .env file
+    load_dotenv()
 
     app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
     app.config["LOCATIONIQ_API_KEY"] = os.getenv("LOCATIONIQ_API_KEY")
